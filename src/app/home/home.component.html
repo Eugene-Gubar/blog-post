@@ -1,10 +1,14 @@
 <div class="row main">
-  <div class="columns small-12 medium-6 large-4 posts">
-    <div class="post-container">
+  <div class="columns small-12 medium-6 large-4 posts" *ngFor="let post of posts">
+    <div class="post-container card">
       <div class="row">
-        <div class="columns small-12 large-10"></div>
-        <div class="columns small-12 large-2"></div>
+        <div class="columns small-12 large-10">
+          <a routerLink="/" class="post-title">{{ post.title }}</a>
+        </div>
       </div>
+      <p class="post-decription">{{ post.description }}</p>
+      <a routerLink="/" class="cta-btn btn-more">More info</a>
     </div>
   </div>
 </div>
+
