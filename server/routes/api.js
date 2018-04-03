@@ -14,14 +14,28 @@ mongoose.connect(db, (err) => {
 
 router.get('/posts', (req, res) => {
   console.log('Requesting posts');
-  post.find({}).exec((err, posts) => {
-    if (err) {
-      console.log('Error getting the posts');
-    } else {
-      res.json(posts);
-      console.log(posts);
-    }
-  });
+  post.find({})
+    .exec((err, posts) => {
+      if (err) {
+        console.log('Error getting the posts');
+      } else {
+        res.json(posts);
+        // console.log(posts);
+      }
+    });
+});
+
+router.get('/posts/details/:id', (req, res) => {
+  console.log('Requesting Details post');
+  post.findById(req.params.id)
+    .exec((err, post) => {
+      if (err) {
+        console.log('Error getting the Details post');
+      } else {
+        res.json(post);
+        // console.log(post);
+      }
+    });
 });
 
 module.exports = router;

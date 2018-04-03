@@ -1,4 +1,8 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../post.service';
+import { Post } from '../post';
+
+import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
@@ -7,9 +11,16 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DetailsComponent implements OnInit {
 
-  constructor() { }
+  post: Array<Post>;
+
+  constructor(private _postService: PostService, private router: ActivatedRoute) { }
 
   ngOnInit() {
+    this.router.params.subscribe((params) => {
+      let id = params['id'];
+      this._postService.getPost(id)
+        .subscribe(res => this.post = res);
+    });
   }
 
 }
