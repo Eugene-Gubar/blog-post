@@ -1,1 +1,40 @@
 /* You can add global styles to this file, and also import other style files */
+
+$bg: #333333;
+$text-color: #D4D4D4;
+$title-color: #ffffff;
+$btn-color: #33CC00;
+$card-bg: #4A4A4A;
+
+body {
+  background-color: $bg;
+  color: $text-color;
+  font-family: 'Raleway';
+}
+
+a {
+  color: $title-color;
+}
+a:hover {
+  color: $btn-color;
+}
+
+.cta-btn, .cta-btn:visited {
+  color: $btn-color;
+  border: 3px solid $btn-color;
+  padding: 5px 26px;
+  float: right;
+  box-sizing: border-box;
+  border-radius: 12px;
+  font-size: 24px;
+  text-align: center;
+}
+
+.cta-btn:hover {
+  background: $btn-color;
+  color: $bg;
+}
+
+.btn-more {
+  float: left;
+}
