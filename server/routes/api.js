@@ -25,7 +25,7 @@ router.get('/posts', (req, res) => {
     });
 });
 
-router.get('/posts/details/:id', (req, res) => {
+router.get('/details/:id', (req, res) => {
   console.log('Requesting Details post');
   post.findById(req.params.id)
     .exec((err, post) => {
@@ -33,7 +33,7 @@ router.get('/posts/details/:id', (req, res) => {
         console.log('Error getting the Details post');
       } else {
         res.json(post);
-        // console.log(post);
+        console.log(post);
       }
     });
 });
