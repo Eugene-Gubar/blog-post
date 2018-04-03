@@ -1,0 +1,22 @@
+
+.text-title h1 {
+  text-align: center;
+  font-size: 4.7em;
+  font-weight: 700;
+}
+
+.text-description {
+  letter-spacing: 0.07em;
+  font-size: 1.4em;
+}
+
+.b-text-title {
+  margin-bottom: 100px;
+}
+
+a#back {
+  background: url('/assets/images/back.svg') no-repeat;
+  width: 135px;
+  margin-bottom: 45px;
+  display: block;
+}

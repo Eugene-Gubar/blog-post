@@ -1,14 +1,14 @@
 <section *ngIf="post" class="section bg-blur">
 
-  <div class="row">
+  <div class="row b-text-title">
     <div class="columns text-title">
-      <a routerLink="/" id="back">Back</a>
+      <a routerLink="/" id="back"></a>
       <h1><a href="{{ post.url }}" id="external-btn">{{ post.title }}</a></h1>
     </div>
   </div>
 
-  <div class="row columns">
-    <p>{{ post.description }}</p>
+  <div class="row columns block-description">
+    <p class="text-description">{{ post.description }}</p>
   </div>
 
 </section>
