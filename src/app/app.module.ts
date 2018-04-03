@@ -10,6 +10,7 @@ import { NavComponent } from './nav/nav.component';
 import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { FooterComponent } from './footer/footer.component';
+import { LengthPipe } from './length.pipe';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { FooterComponent } from './footer/footer.component';
     NavComponent,
     HomeComponent,
     DetailsComponent,
-    FooterComponent
+    FooterComponent,
+    LengthPipe
   ],
   imports: [
     BrowserModule,

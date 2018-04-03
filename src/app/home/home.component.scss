@@ -8,6 +8,7 @@ $card-bg: #4A4A4A;
   padding: 25px 25px 0px 25px;
   border: none;
   background-color: $card-bg;
+  overflow: hidden;
   width: 450px;
   height: 410px;
 }
@@ -30,7 +31,7 @@ $card-bg: #4A4A4A;
   color: $text-color;
   font-size: 21px;
   letter-spacing: 0.07em;
-  max-height: 165px;
+  height: 165px;
   overflow: hidden;
 }
 
