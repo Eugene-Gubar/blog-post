@@ -11,6 +11,7 @@ import { HomeComponent } from './home/home.component';
 import { DetailsComponent } from './details/details.component';
 import { FooterComponent } from './footer/footer.component';
 import { LengthPipe } from './length.pipe';
+import { PostComponent } from './post/post.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { LengthPipe } from './length.pipe';
     HomeComponent,
     DetailsComponent,
     FooterComponent,
-    LengthPipe
+    LengthPipe,
+    PostComponent
   ],
   imports: [
     BrowserModule,
