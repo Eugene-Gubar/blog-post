@@ -38,4 +38,22 @@ router.get('/details/:id', (req, res) => {
     });
 });
 
+router.get('/post', (req, res) => {
+  console.log('Add new Post');
+  let Post = post; // This approach is for eslint [new post()] should be [new Post()]
+  let newPost = new Post();
+
+  newPost.title = req.body.title;
+  newPost.url = req.body.url;
+  newPost.description = req.body.description;
+
+  newPost.save((err, addedPost) => {
+    if (err) {
+      console.log('Error added new post');
+    } else {
+      res.json(addedPost);
+    }
+  });
+});
+
 module.exports = router;
