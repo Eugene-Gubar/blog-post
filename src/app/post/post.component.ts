@@ -15,7 +15,7 @@ export class PostComponent implements OnInit {
   posts: Array<Post>
   postForm: FormGroup;
 
-  constructor(private _postService: PostService, private fb: FormBuilder, private router: Router) {
+  constructor(private _postService: PostService, fb: FormBuilder, private router: Router) {
     this.postForm = fb.group({
       'title': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(75)])],
       'url': [null, Validators.required],
