@@ -1,6 +1,8 @@
 import { Injectable } from '@angular/core';
-import { Http } from '@angular/http';
+import { Http, Headers, RequestOptions } from '@angular/http';
 import 'rxjs/add/operator/map';
+
+import { Post } from './post';
 
 @Injectable()
 export class PostService {
@@ -16,6 +18,14 @@ export class PostService {
 
   getPost(id) {
     return this._http.get('/api/details/'+id)
+      .map(result => this.result = result.json());
+  }
+
+  insertPost(post: Post) {
+    const headers = new Headers({ 'Content-Type': 'application/json' });
+    const options = new RequestOptions({ headers: headers });
+
+    return this._http.post('/api/posts', JSON.stringify(post), options)
       .map(result => this.result = result.json());
   }
 

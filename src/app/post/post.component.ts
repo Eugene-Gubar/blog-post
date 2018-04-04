@@ -1,4 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { PostService } from '../post.service';
+import { Post } from '../post';
+import { Router } from '@angular/router';
+
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 
 @Component({
   selector: 'app-post',
@@ -7,9 +12,28 @@ import { Component, OnInit } from '@angular/core';
 })
 export class PostComponent implements OnInit {
 
-  constructor() { }
+  posts: Array<Post>
+  postForm: FormGroup;
+
+  constructor(private _postService: PostService, private fb: FormBuilder, private router: Router) {
+    this.postForm = fb.group({
+      'title': [null, Validators.compose([Validators.required, Validators.minLength(10), Validators.maxLength(75)])],
+      'url': [null, Validators.required],
+      'description': [null, Validators.compose([Validators.required, Validators.minLength(25), Validators.maxLength(256)])]
+    });
+  }
 
   ngOnInit() {
+    this._postService.getPosts()
+      .subscribe(res => this.posts = res);
+  }
+
+  addPost(post: Post) {
+    this._postService.insertPost(post)
+      .subscribe(newPost => {
+        this.posts.push(newPost);
+        this.router.navigateByUrl('/');
+      });
   }
 
 }
