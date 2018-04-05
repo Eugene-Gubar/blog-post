@@ -50,6 +50,7 @@ router.post('/posts', (req, res) => {
   newPost.save((err, addedPost) => {
     if (err) {
       console.log('Error added new post');
+      res.json(400, 'Request Failed to Validate on Server');
     } else {
       res.json(addedPost);
     }

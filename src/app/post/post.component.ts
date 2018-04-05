@@ -12,7 +12,7 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 })
 export class PostComponent implements OnInit {
 
-  posts: Array<Post>
+  posts: Array<Post>;
   postForm: FormGroup;
 
   constructor(private _postService: PostService, fb: FormBuilder, private router: Router) {
