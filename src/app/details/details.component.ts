@@ -2,16 +2,12 @@ import { Component, OnInit } from '@angular/core';
 import { PostService } from '../post.service';
 import { Post } from '../post';
 
-import { routerTransition } from '../animations';
-
 import { Router, ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-details',
   templateUrl: './details.component.html',
-  styleUrls: ['./details.component.scss'],
-  animations: [routerTransition],
-  host: {'[@routerTransition]': ''}
+  styleUrls: ['./details.component.scss']
 })
 export class DetailsComponent implements OnInit {
 
